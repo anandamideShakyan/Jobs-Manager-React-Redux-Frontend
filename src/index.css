@@ -40,6 +40,8 @@ html {
   --white: #fff;
   --red-light: #f8d7da;
   --red-dark: #842029;
+  --yellow-light: #f8de7e;
+  --yellow-dark: #b48743;
   --green-light: #d1e7dd;
   --green-dark: #0f5132;
 
@@ -183,6 +185,14 @@ ul {
 }
 .btn-danger:hover {
   background: var(--red-dark);
+  color: var(--white);
+}
+.btn-warning {
+  background: var(--yellow-light);
+  color: var(--yellow-dark);
+}
+.btn-warning:hover {
+  background: var(--yellow-dark);
   color: var(--white);
 }
 /* alerts */

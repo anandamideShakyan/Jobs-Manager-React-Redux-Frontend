@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
-import customFetch from "../../utils/axios";
 import { showStatsThunk, getAllJobsThunk } from "./allJobsThunk";
 
 export const getAllJobs = createAsyncThunk("allJobs/getJobs", getAllJobsThunk);
@@ -34,9 +33,10 @@ const allJobsSlice = createSlice({
 		hideLoading: (state) => {
 			state.isLoading = false;
 		},
-		handleChange: (state, { payload: { name, value } }) => {
+		handleChange: (state, { payload }) => {
 			// state.page = 1;
-			state[name] = value;
+			console.log(payload);
+			return { ...state, ...payload };
 		},
 		clearFilters: (state) => {
 			return { ...state, ...initialFiltersState };
